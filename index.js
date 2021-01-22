@@ -1,4 +1,5 @@
 const isValidString = (str) => {
+  if (typeof str !== 'string') throw new Error('argument must be a string!');
   const strMap = new Map();
 
   for (let i = 0; i < str.length; i++) {
@@ -12,4 +13,4 @@ const isValidString = (str) => {
   }
 };
 
-console.log(isValidString('abcc'));
+console.log(isValidString('abc'));
