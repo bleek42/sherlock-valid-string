@@ -7,8 +7,12 @@ const isValidString = (str) => {
       strMap.set(str[i], + 1);
       console.log(strMap);
     }
-    else if (strMap.has(str[i])) {
-      strMap.set(str[i], + 1);
+    else if (strMap.has(str[i]) === 2) {
+      strMap.delete()
+    }
+    if (strMap.has(str[i]) > 2) {
+      const notValid = "Not a Valid String";
+      return notValid;
     }
   }
 };
