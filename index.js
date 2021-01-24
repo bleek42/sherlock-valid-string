@@ -1,16 +1,18 @@
 const isValidString = (str) => {
-  if (typeof str !== 'string') throw new Error('argument must be a string!');
-  const strMap = new Map();
+  if (typeof str !== 'string') throw TypeError('thats not a mfn string!');
 
-  for (let i = 0; i < str.length; i++) {
-    if (!strMap.has(str[i])) {
-      strMap.set(str[i], + 1);
-      console.log(strMap);
+  const hashMap = new Map();
+
+  for (const char of str) {
+    if (!hashMap.has(char)) {
+      hashMap.set(char, 1);
+      console.log(hashMap);
     }
-    else if (strMap.has(str[i])) {
-      strMap.set(str[i], + 1);
+    else {
+      hashMap.set(char, hashMap.get(char) + 1);
+      console.log(hashMap);
     }
-  }
+  };
 };
 
-console.log(isValidString('abc'));
+console.log(isValidString('abcc'));
